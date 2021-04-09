@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
-import Modal from '@material-ui/core/Modal';
+import { Modal, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -152,7 +152,7 @@ export default function Home() {
     <div className="projects">
       <h3>Projects</h3>
       <div className="projects-card">
-      <Image
+        <Image
           onClick={handleGohula}
           className="projects-picture"
           src="/images/gohula.gif"
@@ -174,13 +174,21 @@ export default function Home() {
           />
         </Modal>
         <div className="projects-card-text">
-          <h4>GoHuLa</h4>
-          <p><b><b></b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js, Axios, Docker, 
-          Bootstrap, Material-UI, React Testing Library, Jest, Supertest</p>
+          <h4>GoHuLa - Etsy Mock-Up</h4>
+          <p><b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js, Docker, 
+          Bootstrap</p>
           <br></br>
-          <p>A mock up</p>
+          <p>A full-stack mock-up of an etsy product page made to handle 100 randomly generated and seeded
+            primary records stored in a database across various mock sellers and interact with 2 additional
+            micro-services created by colleagues via a proxy server
+          </p>
+          <div className="projects-card-buttons">
+            <Button className="projects-card-button" variant="outlined">Demo</Button>
+            <Button className="projects-card-button" variant="outlined">See The Code</Button>
+          </div>
         </div>
       </div>
+
     </div>
     </>
   )
