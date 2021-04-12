@@ -23,6 +23,7 @@ a {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
+  outline: none;
 }
 
 h3 {
@@ -177,6 +178,5 @@ h4 {
 }
 
 .projects-card-button {
-  margin: 5px;
+  margin: 5px !important;
 }
-

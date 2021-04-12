@@ -26,6 +26,7 @@ export default function Home() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      outline: 'none',
     },
 
     paper: {
@@ -155,10 +156,10 @@ export default function Home() {
         <Image
           onClick={handleGohula}
           className="projects-picture"
-          src="/images/gohula.gif"
+          src="/images/gohula.png"
           height={280}
-          width={480}
-          alt="galvanize and hack reactor certificate"
+          width={530}
+          alt="screenshot of etsy mock site"
         />
         <Modal
           className={classes.modal}
@@ -167,14 +168,14 @@ export default function Home() {
         >
           <Image
             className={classes.paper, `modal`}
-            alt="randomly generated"
+            alt="demo of etsy page mock site"
             src="/images/gohula.gif"
             height={700}
             width={1200}
           />
         </Modal>
         <div className="projects-card-text">
-          <h4>GoHuLa - Etsy Mock-Up</h4>
+          <h4>Etsy Product Page Mock</h4>
           <p><b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js, Docker, 
           Bootstrap</p>
           <br></br>
@@ -183,11 +184,56 @@ export default function Home() {
             micro-services created by colleagues via a proxy server
           </p>
           <div className="projects-card-buttons">
-            <Button className="projects-card-button" variant="outlined">Demo</Button>
-            <Button className="projects-card-button" variant="outlined">See The Code</Button>
+            <Button 
+              className="projects-card-button" 
+              variant="outlined"
+              onClick={handleGohula}
+            >
+              Demo
+            </Button>
+            <Button 
+              className="projects-card-button" 
+              variant="outlined"
+              target="_blank"
+              href="https://github.com/GoHuLa/Product"
+            >
+              See The Code
+            </Button>
           </div>
         </div>
       </div>
+
+      <div className="projects-card">
+      <div className="projects-card-text">
+          <h4>Etsy Back End Optimization</h4>
+          <p><b>Tech Stack:</b> PostgreSQL, Express, React, Node.js, Docker,
+           New Relic, K6, Loader.io, EC2, NGINX</p>
+          <br></br>
+          <p>Optimized and up-scaled a legacy codebase using PostgreSQL to handle over 
+            11 million unique records using balancing, indexing and caching. Resulting in being
+            able to handle over 2000 requests per second with 0% error rate and average response of
+            40-50ms 
+          </p>
+          <div className="projects-card-buttons">
+            <Button 
+              className="projects-card-button" 
+              variant="outlined"
+              target="_blank"
+              href="https://github.com/Billions-PG/Reviews"
+            >
+              See The Code
+            </Button>
+          </div>
+        </div>
+        <Image
+          className="projects-picture"
+          src="/images/reviews.png"
+          height={280}
+          width={530}
+          alt="screenshot of etsy mock site"
+        />
+      </div>
+
 
     </div>
     </>
