@@ -8,6 +8,7 @@ export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
   const [treehouseOpen, setTreehouseOpen] = useState(false);
   const [galvanizeOpen, setGalvanizeOpen] = useState(false);
+  const [pokebuilderOpen, setPokebuilderOpen] = useState(false);
 
   const handleGohula = () => {
     setGohulaOpen(!gohulaOpen);
@@ -19,6 +20,10 @@ export default function Home() {
 
   const handleGalvanize = () => {
     setGalvanizeOpen(!galvanizeOpen);
+  };
+
+  const handlePokebuilder = () => {
+    setPokebuilderOpen(!pokebuilderOpen);
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -69,7 +74,7 @@ export default function Home() {
     </div>
 
     {/* About */}
-    <div className="about">
+    <div id="about" className="about">
       <h3>About</h3>
       <div className="about-wrapper">
         <Image 
@@ -93,7 +98,7 @@ export default function Home() {
     </div>
 
     {/* Experience */}
-    <div className="experience">
+    <div id="experience" className="experience">
       <h3>Experience</h3>
       <div className="experience-wrapper">
         <div className="experience-card">
@@ -150,12 +155,12 @@ export default function Home() {
     </div>
 
     {/* Projects */}
-    <div className="projects">
+    <div id="projects" className="projects">
       <h3>Projects</h3>
       <div className="projects-card">
         <Image
           onClick={handleGohula}
-          className="projects-picture"
+          className="projects-picture clickable"
           src="/images/gohula.png"
           height={280}
           width={530}
@@ -234,7 +239,69 @@ export default function Home() {
         />
       </div>
 
+      <div className="projects-card">
+        <Image
+          onClick={handlePokebuilder}
+          className="projects-picture clickable"
+          src="/images/pokebuilder.png"
+          height={280}
+          width={530}
+          alt="screenshot of pokebuilder"
+        />
+        <Modal
+          className={classes.modal}
+          open={pokebuilderOpen}
+          onClose={handlePokebuilder}
+        >
+          <Image
+            className={classes.paper, `modal`}
+            alt="demo of etsy page mock site"
+            src="/images/pokebuilder.gif"
+            height={700}
+            width={1200}
+          />
+        </Modal>
+        <div className="projects-card-text">
+          <h4>PokeBuilder</h4>
+          <p><b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js, Docker, 
+          Bootstrap</p>
+          <br></br>
+          <p>A full-stack web app used to build teams of pokemon and see at a glance how well
+            they match up to different elemental types and damage types
+          </p>
+          <div className="projects-card-buttons">
+            <Button 
+              className="projects-card-button" 
+              variant="outlined"
+              onClick={handlePokebuilder}
+            >
+              Demo
+            </Button>
+            <Button 
+              className="projects-card-button" 
+              variant="outlined"
+              target="_blank"
+              href="https://poke-builder.herokuapp.com/"
+            >
+              Try it out
+            </Button>
+            <Button 
+              className="projects-card-button" 
+              variant="outlined"
+              target="_blank"
+              href="https://github.com/jwhunt19/pokebuilder"
+            >
+              See The Code
+            </Button>
+          </div>
+        </div>
+      </div>
 
+    </div>
+
+    {/* Contact */}
+    <div>
+      
     </div>
     </>
   )
