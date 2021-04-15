@@ -52,6 +52,9 @@ header {
 }
 
 nav {
+  display: flex;
+  width: 85vw;
+  justify-content: space-between;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
@@ -65,9 +68,14 @@ nav a {
 }
 
 nav a:hover {
-  font-size: 1.05em;
+  font-size: 1.01em;
   color: rgb(221, 154, 235);
 }
+
+.socials {
+  display: flex;
+}
+
 
 /* Hero */
 
@@ -159,6 +167,9 @@ h4 {
 .projects-card {
   display: flex;
   justify-content: space-evenly;
+}
+
+.projects-card:not(:last-child) {
   margin-bottom: 100px;
 }
 
@@ -191,4 +202,71 @@ h4 {
 
 .projects-card-button {
   margin: 5px !important;
+}
+
+/* Contact */
+
+#contact h3 {
+  padding-bottom: 0px !important;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-wrapper form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 70px;
+}
+
+.contact-wrapper form input, .contact-wrapper form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 3px;
+}
+
+.contact-wrapper form textarea {
+  resize: vertical;
+  height: 100px;
+  max-height: 300px;
+}
+
+.contact-wrapper div {
+  width: 30%;
+  margin: 70px;
+}
+
+.contact-submit {
+  width: 35%;
+}
+
+.contact-info-text {
+  text-align: center !important;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: space-around;
+  margin: 70px 0px 0px 0px !important;
+  width: 100% !important;
+}
+
+.contact-socials a {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #c4c4c4;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
+
+.contact-socials a:hover {
+  background-color: #f1f1f1;
 }

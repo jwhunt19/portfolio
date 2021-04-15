@@ -10,9 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script defer src="../node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
-          <script defer src="../node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
-          <script defer src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
        </Head>
         <body>
           <Main />

@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
-import { Modal, Button } from '@material-ui/core';
+import { Modal, Button, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
@@ -52,19 +55,22 @@ export default function Home() {
     <>
     <header>
       <span className="logo">&lt;Joey /&gt;</span>
-      <nav>
-        <a href="#about">about</a>
-        <a href="#experience">experience</a>
-        <a href="#projects">projects</a>
-        <a href="#contact">contact</a>
+      <nav id="navbar">
+        <div>
+          <a href="#about">about</a>
+          <a href="#experience">experience</a>
+          <a href="#projects">projects</a>
+          <a href="#contact">contact</a>
+        </div>
+        <div className="socials">
+          <a href="https://github.com/jwhunt19">
+            <FontAwesomeIcon className="fa-lg" icon={faGithub} />
+          </a>
+          <a href="">
+            <FontAwesomeIcon className="fa-lg" icon={faLinkedin} />
+          </a>
+        </div>
       </nav>
-      <div className="socials">
-        <a href="https://github.com/jwhunt19">
-          <i className="fab fa-github"></i>
-        </a>
-        <a href=""></a>
-        <a href=""></a>
-      </div>
     </header>
 
     {/* Hero */}
@@ -300,8 +306,43 @@ export default function Home() {
     </div>
 
     {/* Contact */}
-    <div>
-      
+    <div id="contact">
+      <h3>Contact</h3>
+      <div className="contact-wrapper">
+        <form
+          action="https://formspree.io/f/xrgrbzoe"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your Name" />
+          <input type="email" name="_replyto" placeholder="Your Email" />
+          <input type="text" name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Message" />
+          <Button  className="contact-submit" variant="outlined" type="submit" endIcon={<Icon>send</Icon>}>Send</Button>
+        </form>
+        <div className="contact-info">
+          <p className="contact-info-text">
+            Whether you want to talk about opportunities, collaboration, advice or just chat,
+            please do not hesitate to fill out the form here or shoot me an email directly at jwhunt19@gmail.com
+          </p>
+          <div className="contact-socials">
+            <a href="https://github.com/jwhunt19">
+              <FontAwesomeIcon className="fa-2x" icon={faGithub} />
+            </a>
+            <a href="">
+              <FontAwesomeIcon className="fa-2x" icon={faLinkedin} />
+            </a>
+            <a href="">
+              <FontAwesomeIcon className="fa-2x" icon={faEnvelope} />
+            </a>
+            <a href="">
+              <FontAwesomeIcon className="fa-2x" icon={faTwitter} />
+            </a>
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </div>
     </div>
     </>
   )
