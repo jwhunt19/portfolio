@@ -368,17 +368,17 @@ export default function Home() {
             please do not hesitate to fill out the form here or shoot me an email directly at jwhunt19@gmail.com
           </p>
           <div className="contact-socials">
-            <a href="https://github.com/jwhunt19">
+            <a target="_blank" href="https://github.com/jwhunt19">
               <FontAwesomeIcon className="fa-2x" icon={faGithub} />
             </a>
-            <a href="">
+            <a target="_blank" href="https://www.linkedin.com/in/josephhuntington/">
               <FontAwesomeIcon className="fa-2x" icon={faLinkedin} />
             </a>
-            <a href="">
-              <FontAwesomeIcon className="fa-2x" icon={faEnvelope} />
-            </a>
-            <a href="">
+            <a target="_blank" href="https://twitter.com/jwhunt19">
               <FontAwesomeIcon className="fa-2x" icon={faTwitter} />
+            </a>
+            <a href="mailto:jwhunt19@gmail.com">
+              <FontAwesomeIcon className="fa-2x" icon={faEnvelope} />
             </a>
           </div>
           <div>
