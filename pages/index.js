@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -51,11 +51,40 @@ export default function Home() {
 
   const classes = useStyles();
 
+  
+  const [navColor, setNavColor] = useState(false);
+  const [scrollDistance, setScrollDistance] = useState(0);
+
+  useEffect(() => {
+    const updateScrollDistance = () => {
+      setScrollDistance(window.pageYOffset);
+    };
+  
+    const onScroll = () => {
+        window.requestAnimationFrame(updateScrollDistance);
+    };
+  
+    window.addEventListener("scroll", onScroll);
+    console.log(scrollDistance)
+
+    const nav = document.getElementById('navbar');
+
+    nav.classList.toggle("nav-scrolled", scrollDistance > 800);
+  
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollDistance]);
+
+
+
+
+
+
+
   return (
     <>
-    <header>
+    <header id="navbar">
       <span className="logo">&lt;Joey /&gt;</span>
-      <nav id="navbar">
+      <nav>
         <div>
           <a href="#about">about</a>
           <a href="#experience">experience</a>
@@ -63,10 +92,10 @@ export default function Home() {
           <a href="#contact">contact</a>
         </div>
         <div className="socials">
-          <a href="https://github.com/jwhunt19">
+          <a target="_blank" href="https://github.com/jwhunt19">
             <FontAwesomeIcon className="fa-lg" icon={faGithub} />
           </a>
-          <a href="">
+          <a target="_blank" href="https://www.linkedin.com/in/josephhuntington/">
             <FontAwesomeIcon className="fa-lg" icon={faLinkedin} />
           </a>
         </div>
