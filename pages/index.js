@@ -103,10 +103,24 @@ export default function Home() {
     </header>
 
     {/* Hero */}
-    <div className="hero">
+    <div className="hero context">
       <h1>JOSEPH &#40;JOEY&#41; <br/>HUNTINGTON</h1>
       <h2>Full Stack Software Engineer</h2>
     </div>
+    <div class="area" >
+      <ul class="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+      </ul>
+    </div >
 
     {/* About */}
     <div id="about" className="about">
