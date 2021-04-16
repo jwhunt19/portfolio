@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faDownload } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
@@ -90,6 +90,7 @@ export default function Home() {
           <a href="#experience">experience</a>
           <a href="#projects">projects</a>
           <a href="#contact">contact</a>
+          <a href="Joseph Huntington Resume NP.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a>
         </div>
         <div className="socials">
           <a target="_blank" href="https://github.com/jwhunt19">
