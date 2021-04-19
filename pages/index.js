@@ -65,7 +65,6 @@ export default function Home() {
     };
   
     window.addEventListener("scroll", onScroll);
-    console.log(scrollDistance)
 
     const nav = document.getElementById('navbar');
 
@@ -127,13 +126,14 @@ export default function Home() {
     <div id="about" className="about">
       <h3>About</h3>
       <div className="about-wrapper">
-        <Image 
-          class="about-image" 
-          src="/images/me.jpg" 
-          height={390}
-          width={390}
-          alt="a photo of me looking very handsome"
-        />
+        <div className="about-image-wrapper">
+          <Image 
+            class="about-image" 
+            src="/images/me.jpg" 
+            layout="fill"
+            alt="a photo of me looking very handsome"
+          />
+        </div>
         <p>
           A full-stack software engineer who started as a front-end developer. I completed a
           front-end tech degree with a focus on mobile-first development and responsive design
@@ -147,75 +147,19 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Experience */}
-    <div id="experience" className="experience">
-      <h3>Experience</h3>
-      <div className="experience-wrapper">
-        <div className="experience-card">
-          <Image
-            onClick={handleTreehouse}
-            className="experience-cert"
-            src="/images/treehouse-cert.png"
-            height={400}
-            width={480}
-            alt="galvanize and hack reactor certificate"
-          />
-          <Modal
-            className={classes.modal}
-            open={treehouseOpen}
-            onClose={handleTreehouse}
-          >
-            <Image
-              className={classes.paper, `modal`}
-              alt="randomly generated"
-              src="/images/treehouse-cert.png"
-              height={720}
-              width={864}
-            />
-          </Modal>
-          <h4>Treehouse</h4>
-          <p>Front End Web Development Techdegree</p>
-        </div>
-        <div className="experience-card">
-          <Image
-            onClick={handleGalvanize}
-            className="experience-cert"
-            src="/images/galvanize-cert.png"
-            height={400}
-            width={480}
-            alt="galvanize and hack reactor certificate"
-          />
-          <Modal
-            className={classes.modal}
-            open={galvanizeOpen}
-            onClose={handleGalvanize}
-          >
-            <Image
-              className={classes.paper, `modal`}
-              alt="randomly generated"
-              src="/images/galvanize-cert.png"
-              height={720}
-              width={864}
-            />
-          </Modal>
-          <h4>Hack Reactor | Galvanize</h4>
-          <p>Advanced Software Engineering Immersive</p>
-        </div>
-      </div>
-    </div>
-
     {/* Projects */}
     <div id="projects" className="projects">
       <h3>Projects</h3>
       <div className="projects-card">
-        <Image
-          onClick={handleGohula}
-          className="projects-picture clickable"
-          src="/images/gohula.png"
-          height={280}
-          width={530}
-          alt="screenshot of etsy mock site"
-        />
+        <div className="project-image-wrapper">
+          <Image
+            onClick={handleGohula}
+            className="projects-picture clickable"
+            src="/images/gohula.png"
+            alt="screenshot of etsy mock site"
+            layout="fill"
+          />
+        </div>
         <Modal
           className={classes.modal}
           open={gohulaOpen}
@@ -280,24 +224,26 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <Image
-          className="projects-picture"
-          src="/images/reviews.png"
-          height={280}
-          width={530}
-          alt="screenshot of etsy mock site"
-        />
+        <div className="project-image-wrapper">
+          <Image
+            className="projects-picture"
+            src="/images/reviews.png"
+            layout="fill"
+            alt="screenshot of etsy mock site"
+          />
+        </div>
       </div>
 
       <div className="projects-card">
-        <Image
-          onClick={handlePokebuilder}
-          className="projects-picture clickable"
-          src="/images/pokebuilder.png"
-          height={280}
-          width={530}
-          alt="screenshot of pokebuilder"
-        />
+        <div className="project-image-wrapper">
+          <Image
+            onClick={handlePokebuilder}
+            className="projects-picture clickable"
+            src="/images/pokebuilder.png"
+            layout="fill"
+            alt="screenshot of pokebuilder"
+          />
+        </div>
         <Modal
           className={classes.modal}
           open={pokebuilderOpen}
@@ -346,7 +292,65 @@ export default function Home() {
           </div>
         </div>
       </div>
+    </div>
 
+        {/* Experience */}
+        <div id="experience" className="experience">
+      <h3>Experience</h3>
+      <div className="experience-wrapper">
+        <div className="experience-card">
+          <div className="experience-image-wrapper">
+            <Image
+              onClick={handleTreehouse}
+              className="experience-cert"
+              src="/images/treehouse-cert.png"
+              layout="fill"
+              alt="galvanize and hack reactor certificate"
+            />
+          </div>
+          <Modal
+            className={classes.modal}
+            open={treehouseOpen}
+            onClose={handleTreehouse}
+          >
+            <Image
+              className={classes.paper, `modal`}
+              alt="randomly generated"
+              src="/images/treehouse-cert.png"
+              height={720}
+              width={864}
+            />
+          </Modal>
+          <h4>Treehouse</h4>
+          <p>Front End Web Development Techdegree</p>
+        </div>
+        <div className="experience-card">
+          <div className="experience-image-wrapper">
+            <Image
+              onClick={handleGalvanize}
+              className="experience-cert"
+              src="/images/galvanize-cert.png"
+              layout="fill"
+              alt="galvanize and hack reactor certificate"
+            />
+          </div>
+          <Modal
+            className={classes.modal}
+            open={galvanizeOpen}
+            onClose={handleGalvanize}
+          >
+            <Image
+              className={classes.paper, `modal`}
+              alt="randomly generated"
+              src="/images/galvanize-cert.png"
+              height={720}
+              width={864}
+            />
+          </Modal>
+          <h4>Hack Reactor | Galvanize</h4>
+          <p>Advanced Software Engineering Immersive</p>
+        </div>
+      </div>
     </div>
 
     {/* Contact */}
@@ -381,9 +385,6 @@ export default function Home() {
             <a href="mailto:jwhunt19@gmail.com">
               <FontAwesomeIcon className="fa-2x" icon={faEnvelope} />
             </a>
-          </div>
-          <div>
-
           </div>
         </div>
       </div>
