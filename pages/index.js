@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import Head from 'next/Head';
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -81,8 +82,11 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+      <title>Joey Huntington Portfolio</title>
+    </Head>
     <header id="navbar">
-      <span className="logo">&lt;Joey /&gt;</span>
+      <a href="#"><span className="logo">&lt;Joey /&gt;</span></a>
       <nav>
         <div>
           <a href="#about">about</a>
@@ -132,17 +136,21 @@ export default function Home() {
             src="/images/me.jpg" 
             layout="fill"
             alt="a photo of me looking very handsome"
+            priority
           />
         </div>
         <p>
-          A full-stack software engineer who started as a front-end developer. I completed a
-          front-end tech degree with a focus on mobile-first development and responsive design
-          from the online technology school Treehouse.<br/><br/>
-
-          I decided to move into full-stack development to open more opportunities, learn a vast
-          pool of technologies, and work in a more diverse environment where I can exercise my
-          problem-solving skills. I graduated from Hack Reactor's Advanced Software Engineering
-          Immersive with a focus on the PERN/MERN stack and continue to learn new technologies every day.
+          Hello! My name is Joseph but you can call me Joey. I am a full stack software engineer
+          based in Northern Virginia always looking for the next great opportunity.
+          With a background as an Apprentice Electrician and Office Administrator
+          I've been involved in problem solving across a wide spectrum, and I love it. My dream has always been
+          to work with the latest technology in a way that I can bring my creative ideas to life, and with my 
+          love for problem solving, programming was a natural conclusion.
+          <br/><br/>
+          I studied front end development with the online technology school Treehouse then was selected
+          to join the highly selective Hack Reactor Software Engineering Immersive program where I learned
+          everything from CS fundamentals to the latest technologies in software engineering. I plan
+          to use my creative passions to innovate solutions for this industry.
         </p>
       </div>
     </div>
@@ -158,6 +166,7 @@ export default function Home() {
             src="/images/gohula.png"
             alt="screenshot of etsy mock site"
             layout="fill"
+            priority
           />
         </div>
         <Modal
@@ -174,7 +183,7 @@ export default function Home() {
           />
         </Modal>
         <div className="projects-card-text">
-          <h4>Etsy Product Page Mock</h4>
+          <h4>GoHuLa</h4>
           <p><b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js, Docker, 
           Bootstrap</p>
           <br></br>
@@ -204,7 +213,7 @@ export default function Home() {
 
       <div className="projects-card">
       <div className="projects-card-text">
-          <h4>Etsy Back End Optimization</h4>
+          <h4>Billions PG</h4>
           <p><b>Tech Stack:</b> PostgreSQL, Express, React, Node.js, Docker,
            New Relic, K6, Loader.io, EC2, NGINX</p>
           <br></br>
@@ -230,6 +239,7 @@ export default function Home() {
             src="/images/reviews.png"
             layout="fill"
             alt="screenshot of etsy mock site"
+            priority
           />
         </div>
       </div>
@@ -242,6 +252,7 @@ export default function Home() {
             src="/images/pokebuilder.png"
             layout="fill"
             alt="screenshot of pokebuilder"
+            priority
           />
         </div>
         <Modal
@@ -306,6 +317,7 @@ export default function Home() {
               src="/images/treehouse-cert.png"
               layout="fill"
               alt="galvanize and hack reactor certificate"
+              priority
             />
           </div>
           <Modal
@@ -332,6 +344,7 @@ export default function Home() {
               src="/images/galvanize-cert.png"
               layout="fill"
               alt="galvanize and hack reactor certificate"
+              priority
             />
           </div>
           <Modal
