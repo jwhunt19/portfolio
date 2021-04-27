@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Head from 'next/Head';
+import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
