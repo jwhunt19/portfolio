@@ -546,7 +546,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
 
   .logo {
     font-size: 1.5rem;
@@ -614,7 +614,7 @@ h2 {
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 320px) {
   h1 {
     font-size: 2.1rem;
   }
