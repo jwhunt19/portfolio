@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Icon } from '@material-ui/core';
+import { Modal, Button, Icon, Menu, MenuItem, MenuButton} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faDownload } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
@@ -74,11 +74,15 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollDistance]);
 
+  const [menu, setMenu] = useState(false);
+  const [anchorEl, setAnchorEl] = useState();
 
+  const handleMenu = (e) => {
+    setMenu(true)
+    setAnchorEl(e.currentTarget);
+  };
 
-
-
-
+  const handleMenuClose = () => setMenu(false);
 
   return (
     <>
@@ -104,6 +108,28 @@ export default function Home() {
           </a>
         </div>
       </nav>
+
+
+      <Button id ="menu-button" className="mobile-menu-button" aria-controls="simple-menu" aria-haspopup="true" onClick={handleMenu}>
+        <FontAwesomeIcon className="fa-lg" icon={faBars} />
+      </Button>
+      <Menu
+        className="mobile-menu"
+        anchorEl={anchorEl}
+        getContentAnchorEl={null}
+        keepMounted
+        open={menu}
+        onClose={handleMenuClose}
+      >
+        <MenuItem onClick={handleMenuClose}><a href="#about">about</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="#experience">experience</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="#projects">projects</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="#contact">contact</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="Joseph Huntington Resume NP.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a></MenuItem>
+        <MenuItem onClick={handleMenuClose}>Close</MenuItem>
+      </Menu>
+
+      
     </header>
 
     {/* Hero */}
