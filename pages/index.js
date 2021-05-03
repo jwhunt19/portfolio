@@ -94,8 +94,8 @@ export default function Home() {
       <nav>
         <div>
           <a href="#about">about</a>
-          <a href="#experience">experience</a>
           <a href="#projects">projects</a>
+          <a href="#experience">experience</a>
           <a href="#contact">contact</a>
           <a href="Joseph Huntington Resume NP.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a>
         </div>
@@ -122,11 +122,11 @@ export default function Home() {
         onClose={handleMenuClose}
       >
         <MenuItem onClick={handleMenuClose}><a href="#about">about</a></MenuItem>
-        <MenuItem onClick={handleMenuClose}><a href="#experience">experience</a></MenuItem>
         <MenuItem onClick={handleMenuClose}><a href="#projects">projects</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="#experience">experience</a></MenuItem>
         <MenuItem onClick={handleMenuClose}><a href="#contact">contact</a></MenuItem>
         <MenuItem onClick={handleMenuClose}><a href="Joseph Huntington Resume NP.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a></MenuItem>
-        <MenuItem onClick={handleMenuClose}>Close</MenuItem>
+        <MenuItem onClick={handleMenuClose} className="menu-close">Close</MenuItem>
       </Menu>
 
       
