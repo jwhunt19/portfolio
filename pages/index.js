@@ -314,7 +314,7 @@ export default function Home() {
               className="projects-card-button" 
               variant="outlined"
               target="_blank"
-              href="https://poke-builder.herokuapp.com/"
+              href="https://pokebuilder.herokuapp.com/"
             >
               Try it out
             </Button>
