@@ -97,7 +97,7 @@ export default function Home() {
           <a href="#projects">projects</a>
           <a href="#experience">experience</a>
           <a href="#contact">contact</a>
-          <a href="Joseph Huntington Resume NP.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a>
+          <a href="Joseph_Huntington_Resume_Public.pdf">resume ↓</a>
         </div>
         <div className="socials">
           <a target="_blank" href="https://github.com/jwhunt19">
@@ -125,7 +125,8 @@ export default function Home() {
         <MenuItem onClick={handleMenuClose}><a href="#projects">projects</a></MenuItem>
         <MenuItem onClick={handleMenuClose}><a href="#experience">experience</a></MenuItem>
         <MenuItem onClick={handleMenuClose}><a href="#contact">contact</a></MenuItem>
-        <MenuItem onClick={handleMenuClose}><a href="Joseph Huntington Resume NP.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="Joseph_Huntington_Resume_Public.pdf">resume ↓</a></MenuItem>
+        {/* <MenuItem onClick={handleMenuClose}><a href="Joseph_Huntington_Resume_Public.pdf">resume <FontAwesomeIcon className="fa-xs" icon={faDownload} /></a></MenuItem> */}
         <MenuItem onClick={handleMenuClose} className="menu-close">Close</MenuItem>
       </Menu>
 
