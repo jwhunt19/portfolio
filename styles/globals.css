@@ -626,3 +626,31 @@ h2 {
     font-size: 1.3rem;
   }
 }
+
+/* BLOG STYLES */
+
+.blog {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.blog h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.blog ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.blog ul li {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: 0.3s;
+}
