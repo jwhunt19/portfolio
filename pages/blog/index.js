@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
 
-import BlogPost from '../components/blogpost.js';
+import BlogPost from '../../components/blogpost.js';
 
 export default function Blog() {
 
@@ -101,7 +101,16 @@ export default function Blog() {
       </ul>
     </div >
 
-    <BlogPost />
+    <div className='blog'>
+      <h2>Blog posts</h2>
+      <ul>
+        <li>(06/12/2023) Leetcodes #3 - #489 Lorem ipsum dolor sit amet</li>
+        <li>(05/31/2023) Code Talk #1 - Javascript Array Methods</li>
+        <li>(05/15/2023) Leetcodes #2 - #489 Lorem ipsum dolor sit amet</li>
+        <li>(05/02/2023) Interviews #1 - Employee Databases</li>
+        <li>(04/24/2023) Leetcodes #1 - #489 Lorem ipsum dolor sit amet</li>
+      </ul>
+    </div>
     </>
   )
 }
