@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
 
+import BlogPost from '../components/blogpost.js';
+
 export default function Blog() {
 
   // TODO - is this scroll distance stuff useless?
@@ -50,7 +52,7 @@ export default function Blog() {
       <nav>
         <div>
           <a href="/">← portfolio</a>
-          <a href="Joseph_Huntington_Resume_Public.pdf">resume ↓</a>
+          <a href="Joseph_Huntington_Resume_Public.pdf">resume <u>↓</u></a>
         </div>
         <div className="socials">
           <a target="_blank" href="https://github.com/jwhunt19">
@@ -74,7 +76,8 @@ export default function Blog() {
         open={menu}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={handleMenuClose}><a href="Joseph_Huntington_Resume_Public.pdf">resume ↓</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="/">← portfolio</a></MenuItem>
+        <MenuItem onClick={handleMenuClose}><a href="Joseph_Huntington_Resume_Public.pdf">resume <u>↓</u></a></MenuItem>
         <MenuItem onClick={handleMenuClose} className="menu-close">Close</MenuItem>
       </Menu>
     </header>
@@ -97,6 +100,8 @@ export default function Blog() {
               <li></li>
       </ul>
     </div >
+
+    <BlogPost />
     </>
   )
 }
