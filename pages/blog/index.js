@@ -1,13 +1,11 @@
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Icon, Menu, MenuItem, MenuButton} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button, Icon, Menu, MenuItem } from '@material-ui/core';
+import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
-
-import BlogPost from '../../components/blogpost.js';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Blog() {
 
@@ -104,11 +102,7 @@ export default function Blog() {
     <div className='blog'>
       <h2>Blog posts</h2>
       <ul>
-        <li>(06/12/2023) Leetcodes #3 - #489 Lorem ipsum dolor sit amet</li>
-        <li>(05/31/2023) Code Talk #1 - Javascript Array Methods</li>
-        <li>(05/15/2023) Leetcodes #2 - #489 Lorem ipsum dolor sit amet</li>
-        <li>(05/02/2023) Interviews #1 - Employee Databases</li>
-        <li>(04/24/2023) Leetcodes #1 - #489 Lorem ipsum dolor sit amet</li>
+        <li><Link href='/blog/leetcode/001-2703'><a>(06/22/2023) Leetcodes #1 - 2703. Return Length of Arguments Passed</a></Link></li>
       </ul>
     </div>
     </>
