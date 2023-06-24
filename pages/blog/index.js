@@ -84,8 +84,8 @@ export default function Blog() {
       <h1>Joey's Code Blog</h1>
       <span>Here I write about things I've learned, things I'm working on, and leetcodes. Mostly leetcodes</span>
     </div>
-    <div class="area" >
-      <ul class="circles">
+    <div className="area" >
+      <ul className="circles">
               <li></li>
               <li></li>
               <li></li>
