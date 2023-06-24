@@ -101,8 +101,9 @@ export default function Blog() {
 
     <div className='blog'>
       <h2>Blog posts</h2>
+      <h3>(under construction)</h3>
       <ul>
-        <li><Link href='/blog/leetcode/001-2703'><a>(06/22/2023) Leetcodes #1 - 2703. Return Length of Arguments Passed</a></Link></li>
+        <li><Link href='/posts/test'><a>test blog post - click here</a></Link></li>
       </ul>
     </div>
     </>
