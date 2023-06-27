@@ -8,7 +8,6 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Blog() {
-
   // TODO - is this scroll distance stuff useless?
   const [scrollDistance, setScrollDistance] = useState(0);
   useEffect(() => {
@@ -103,7 +102,7 @@ export default function Blog() {
       <h2>Blog posts</h2>
       <h3>(under construction)</h3>
       <ul>
-        <li><Link href='/posts/test'><a>test blog post - click here</a></Link></li>
+        <li><Link href='/posts/test'>test blog post - click here</Link></li>
       </ul>
     </div>
     </>

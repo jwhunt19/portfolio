@@ -1,8 +1,5 @@
-import Layout from '../../components/layout.js'
-import { getAllPostIds, getPostData } from '../../lib/posts.js'
-import dynamic from 'next/dynamic';
-
-const ReactMarkdown = dynamic(() => import('react-markdown'));
+import Layout from '../../components/Layout'
+import { getPostIDs, getPostData } from '../../lib/posts.js'
 
 export default function Post({ postData }) {
   return (
@@ -13,13 +10,13 @@ export default function Post({ postData }) {
       <br />
       {postData.date}
       <br />
-      <ReactMarkdown>{postData.content}</ReactMarkdown>
+      <div dangerouslySetInnerHTML={{ __html: postData.content }} />
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getPostIDs()
   return {
     paths,
     fallback: false
