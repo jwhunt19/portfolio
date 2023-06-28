@@ -130,8 +130,6 @@ export default function Home() {
         <MenuItem onClick={handleMenuClose}><a href="/blog">blog →</a></MenuItem>
         <MenuItem onClick={handleMenuClose} className="menu-close">Close</MenuItem>
       </Menu>
-
-      
     </header>
 
     {/* Hero */}

@@ -1,73 +1,73 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { Button, Menu, MenuItem } from '@material-ui/core';
+import React, { useState } from 'react';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
-const name = 'Joey'
-export const siteTitle = 'Next.js Sample Website'
-
 export default function Layout({ children, home }) {
+  const [menu, setMenu] = useState(false);
+  const [anchorEl, setAnchorEl] = useState();
+
+  const handleMenu = (e) => {
+    setMenu(true)
+    setAnchorEl(e.currentTarget);
+  };
+
+  const handleMenuClose = () => setMenu(false);
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Joey Huntington's Blog</title>
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+      <header id="navbar" className={styles.nav}>
+        <a href="/"><span className="logo">&lt;Joey /&gt;</span></a>
+        <nav>
+          <div>
+            <a href="/blog">← back to blog</a>
+            <a href="Joseph_Huntington_Resume_Public.pdf">resume <u>↓</u></a>
+          </div>
+          <div className="socials">
+            <a target="_blank" href="https://github.com/jwhunt19">
+              <FontAwesomeIcon className="fa-lg" icon={faGithub} />
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/josephhuntington/">
+              <FontAwesomeIcon className="fa-lg" icon={faLinkedin} />
+            </a>
+          </div>
+        </nav>
+
+
+        <Button id ="menu-button" className="mobile-menu-button" aria-controls="simple-menu" aria-haspopup="true" onClick={handleMenu}>
+          <FontAwesomeIcon className="fa-lg" icon={faBars} />
+        </Button>
+        <Menu
+          className="mobile-menu"
+          anchorEl={anchorEl}
+          getContentAnchorEl={null}
+          keepMounted
+          open={menu}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handleMenuClose}><a href="Joseph_Huntington_Resume_Public.pdf">resume <u>↓</u></a></MenuItem>
+          <MenuItem onClick={handleMenuClose}><a href="/blog">← back to blog</a></MenuItem>
+          <MenuItem onClick={handleMenuClose} className="menu-close">Close</MenuItem>
+        </Menu>
       </header>
+    <div className={styles.container}>
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            ← Back to home
           </Link>
         </div>
       )}
+    </div>
     </div>
   )
 }
