@@ -1,4 +1,5 @@
-# TODO
+# Welcome to my portfolio repository!
 
-- Add email to top menu bar
-- Add arrows to signal the user to scroll down in the hero
+Hosted at https://www.jwhunt19.dev/
+
+Under construction starting around June 25th 2023
