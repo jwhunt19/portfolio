@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Icon, Menu, MenuItem, MenuButton} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faBars } from '@fortawesome/free-solid-svg-icons'
+import { Modal, Button, Icon, Menu, MenuItem, MenuButton} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);

@@ -1,18 +1,18 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { Button, Menu, MenuItem } from '@material-ui/core';
-import React, { useState } from 'react';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/link'
+import Head from "next/head";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Button, Menu, MenuItem } from "@material-ui/core";
+import React, { useState } from "react";
+import Link from "next/link";
+import styles from "./layout.module.css";
 
 export default function Layout({ children, home }) {
   const [menu, setMenu] = useState(false);
   const [anchorEl, setAnchorEl] = useState();
 
   const handleMenu = (e) => {
-    setMenu(true)
+    setMenu(true);
     setAnchorEl(e.currentTarget);
   };
 
@@ -25,24 +25,36 @@ export default function Layout({ children, home }) {
         <title>Joey Huntington's Blog</title>
       </Head>
       <header id="navbar" className={styles.nav}>
-        <a href="/"><span className="logo">&lt;Joey /&gt;</span></a>
+        <a href="/">
+          <span className="logo">&lt;Joey /&gt;</span>
+        </a>
         <nav>
           <div>
             <a href="/blog">← back to blog</a>
-            <a href="Joseph_Huntington_Resume_Public.pdf">resume <u>↓</u></a>
+            <a href="Joseph_Huntington_Resume_Public.pdf">
+              resume <u>↓</u>
+            </a>
           </div>
           <div className="socials">
             <a target="_blank" href="https://github.com/jwhunt19">
               <FontAwesomeIcon className="fa-lg" icon={faGithub} />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/josephhuntington/">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/josephhuntington/"
+            >
               <FontAwesomeIcon className="fa-lg" icon={faLinkedin} />
             </a>
           </div>
         </nav>
 
-
-        <Button id ="menu-button" className="mobile-menu-button" aria-controls="simple-menu" aria-haspopup="true" onClick={handleMenu}>
+        <Button
+          id="menu-button"
+          className="mobile-menu-button"
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onClick={handleMenu}
+        >
           <FontAwesomeIcon className="fa-lg" icon={faBars} />
         </Button>
         <Menu
@@ -53,21 +65,27 @@ export default function Layout({ children, home }) {
           open={menu}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleMenuClose}><a href="Joseph_Huntington_Resume_Public.pdf">resume <u>↓</u></a></MenuItem>
-          <MenuItem onClick={handleMenuClose}><a href="/blog">← back to blog</a></MenuItem>
-          <MenuItem onClick={handleMenuClose} className="menu-close">Close</MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <a href="Joseph_Huntington_Resume_Public.pdf">
+              resume <u>↓</u>
+            </a>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <a href="/blog">← back to blog</a>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} className="menu-close">
+            Close
+          </MenuItem>
         </Menu>
       </header>
-    <div className={styles.container}>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            ← Back to home
-          </Link>
-        </div>
-      )}
+      <div className={styles.container}>
+        <main>{children}</main>
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">← Back to home</Link>
+          </div>
+        )}
+      </div>
     </div>
-    </div>
-  )
+  );
 }

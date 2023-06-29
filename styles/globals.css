@@ -70,6 +70,10 @@ header {
   z-index: 2;
 }
 
+svg {
+  width: 1.5em !important;
+}
+
 .logo {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.75rem;
