@@ -624,6 +624,10 @@ h2 {
     margin-right: 0;
   }
 
+  .proj-link {
+    display: block !important;
+    color: rgb(24, 1, 176);
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -642,10 +646,18 @@ h2 {
   text-align: center;
 }
 
-.blog h2 {
+.blog h3 {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 2rem;
+  padding-bottom: 0px;
+}
+
+.blog h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-decoration: underline;
 }
 
 .blog ul {
@@ -665,6 +677,10 @@ h2 {
   transition: 0.3s;
   max-width: 500px;
   padding: 10px;
+}
+
+.proj-link {
+  display: none;
 }
 
 pre {
