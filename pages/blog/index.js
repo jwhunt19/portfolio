@@ -54,7 +54,7 @@ export default function Blog({posts}) {
       <Head>
         <title>Blog</title>
       </Head>
-      <header id="navbar">
+      <header id="navbar" className={styles.nav}>
         <a href="/">
           <span className="logo">&lt;Joey /&gt;</span>
         </a>
@@ -108,28 +108,6 @@ export default function Blog({posts}) {
           </MenuItem>
         </Menu>
       </header>
-
-      <div className="hero context">
-        <h1>Joey's Code Blog</h1>
-        <span>
-          Here I write about things I've learned, things I'm working on, and
-          leetcodes. Mostly leetcodes
-        </span>
-      </div>
-      <div className="area">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
 
       <div className="blog">
         <h2>Blog posts</h2>

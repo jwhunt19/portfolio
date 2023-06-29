@@ -22,7 +22,6 @@
   justify-content: center;
   padding: 1rem;
   width: 75%;
-  background-color: aquamarine;
 }
 
 .excerpt {
@@ -32,4 +31,11 @@
 .date {
   font-size: 0.8rem;
   font-style: italic;
+}
+
+.nav {
+  color: rgb(255, 255, 255) !important;
+  position: sticky;
+  overflow-x: hidden;
+  background-color: #d6d6d6;
 }

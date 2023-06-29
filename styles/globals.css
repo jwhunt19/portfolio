@@ -666,3 +666,14 @@ h2 {
   max-width: 500px;
   padding: 10px;
 }
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
