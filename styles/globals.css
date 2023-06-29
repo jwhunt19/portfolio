@@ -668,7 +668,9 @@ h2 {
 }
 
 pre {
-  background-color: #f4f4f4;
+  background-color: gray;
+  color: whitesmoke;
+  border: #000000 1px solid;
   padding: 10px;
   border-radius: 5px;
   white-space: pre-wrap;
@@ -676,4 +678,9 @@ pre {
 
 code {
   font-family: 'Courier New', Courier, monospace;
+}
+
+.blogpost p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }

@@ -1,10 +1,11 @@
 import Layout from '../../components/layout.js'
 import { getPostIDs, getPostData } from '../../lib/posts.js'
+import styles from './blog.module.css';
 
 export default function Post({ postData }) {
   return (
-    <Layout>
-      <div dangerouslySetInnerHTML={{ __html: postData.content }} />
+    <Layout className={styles.container}>
+      <div className='blogpost' dangerouslySetInnerHTML={{ __html: postData.content }} />
     </Layout>
   );
 }
