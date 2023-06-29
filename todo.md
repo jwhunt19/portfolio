@@ -1,7 +1,5 @@
 ## todo
 
-- map over posts on blog index page
-- make hamburger menu visible on mobile view of blog posts
 - look into `Module not found: Can't resolve '../../components/Layout.js'` deployment bug
 - Add email to top menu bar
 - Add arrows to signal the user to scroll down in the hero
@@ -10,3 +8,5 @@
 
 - fix large icons (temp fix found)
 - fix unknown width overflow on blog post pages (`overflow-x: hidden` on navbar)
+- map over posts on blog index page
+- make hamburger menu visible on mobile view of blog posts
