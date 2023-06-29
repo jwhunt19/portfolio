@@ -1,13 +1,24 @@
 import Head from "next/head";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Button, Icon, Menu, MenuItem } from "@material-ui/core";
-import Link from "next/link";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-export default function Blog() {
+import { getSortedPosts } from "../../lib/posts";
+import styles from './blog.module.css';
+
+export async function getStaticProps() {
+  const posts = getSortedPosts()
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+export default function Blog({posts}) {
   // TODO - is this scroll distance stuff useless?
   const [scrollDistance, setScrollDistance] = useState(0);
   useEffect(() => {
@@ -122,12 +133,17 @@ export default function Blog() {
 
       <div className="blog">
         <h2>Blog posts</h2>
-        <h3>(under construction)</h3>
-        <ul>
-          <li>
-            <Link href="/posts/test">test blog post - click here</Link>
-          </li>
-        </ul>
+        {posts.map((post) => (
+          <div key={post.id} className={styles.excerpt}>
+            <div className={styles.title}>
+              <Link href={`/blog/${post.id}/`}>{post.title}</Link>
+            </div>
+            <div className={styles.date}>{post.date}</div>
+            <p>{post.description}</p>
+            <br />
+            <hr />
+          </div>
+        ))}
       </div>
     </>
   );

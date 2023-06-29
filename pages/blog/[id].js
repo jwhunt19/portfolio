@@ -4,12 +4,6 @@ import { getPostIDs, getPostData } from '../../lib/posts.js'
 export default function Post({ postData }) {
   return (
     <Layout>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-      <br />
       <div dangerouslySetInnerHTML={{ __html: postData.content }} />
     </Layout>
   );
