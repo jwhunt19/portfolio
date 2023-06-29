@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout.js'
+import Layout from '../../components/layout.js'
 import { getPostIDs, getPostData } from '../../lib/posts.js'
 
 export default function Post({ postData }) {
