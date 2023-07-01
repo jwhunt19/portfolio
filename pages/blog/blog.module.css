@@ -83,7 +83,24 @@
 
 .projectContents h2 {
   text-shadow: none !important;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+}
+
+.projectContents ul {
+  margin-bottom: 10px;
+  padding-left: 40px;
+}
+
+.projectContents li {
+  margin-bottom: 5px;
+}
+
+.projectContents a {
+  color: blue
+}
+
+.projectContents a:hover {
+  color: rgb(255, 123, 123);
 }
 
 .projectTitle {
@@ -99,9 +116,18 @@
 }
 
 .project h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
+  text-decoration: underline;
   text-shadow: none !important;
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  padding: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .project p {
@@ -115,4 +141,25 @@
 
 .project li {
   margin-bottom: 5px;
+}
+
+.project a {
+  color: blue
+}
+
+.project a:hover {
+  color: red;
+}
+
+.pyramid {
+  background-color: black;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.pyramid:hover {
+  background-color: white;
+  color: black;
 }
