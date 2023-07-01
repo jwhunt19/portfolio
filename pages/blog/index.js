@@ -117,6 +117,16 @@ export default function Blog({ posts }) {
             <h4>
               <b>Interview Projects</b>
             </h4>
+            <div className={styles.excerpt}>
+                <div className={styles.title}>
+                  <Link href={`/blog/projects/`}>Projects List &#128204;</Link>
+                </div>
+                <div className={styles.date}>2023</div>
+                <p>A compilation of interview-inspired projects, carefully selected to populate this blog section.
+                </p>
+                <br />
+                <hr className={styles.shortBorder} />
+              </div>
             {posts.projPosts.map((post) => (
               <div key={post.id} className={styles.excerpt}>
                 <div className={styles.title}>
