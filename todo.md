@@ -2,6 +2,7 @@
 
 - Add email to top menu bar
 - Add arrows to signal the user to scroll down in the hero
+- Add a "at a glance" or TLDR type section on home page
 
 ### Completed
 
