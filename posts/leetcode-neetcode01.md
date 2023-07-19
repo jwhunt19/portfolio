@@ -1,7 +1,7 @@
 ---
 title: "Neetcode Day 1"
 date: "2023-07-17"
-description: "Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called"
+description: "Day 1 of the Neetcode roadmap outlined at https://neetcode.io/roadmap"
 ---
 
 ### Neetcode Day 1
