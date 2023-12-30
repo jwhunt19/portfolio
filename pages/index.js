@@ -17,6 +17,7 @@ import {
   MenuButton,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Navbar from "../src/components/Navbar.jsx";
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
@@ -66,112 +67,13 @@ export default function Home() {
 
   const classes = useStyles();
 
-  const [navColor, setNavColor] = useState(false);
-  const [scrollDistance, setScrollDistance] = useState(0);
-
-  useEffect(() => {
-    const updateScrollDistance = () => {
-      setScrollDistance(window.pageYOffset);
-    };
-
-    const onScroll = () => {
-      window.requestAnimationFrame(updateScrollDistance);
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    const nav = document.getElementById("navbar");
-
-    nav.classList.toggle("nav-scrolled", scrollDistance > 800);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollDistance]);
-
-  const [menu, setMenu] = useState(false);
-  const [anchorEl, setAnchorEl] = useState();
-
-  const handleMenu = (e) => {
-    setMenu(true);
-    setAnchorEl(e.currentTarget);
-  };
-
-  const handleMenuClose = () => setMenu(false);
-
   return (
     <>
       <Head>
         <title>Joey Huntington Portfolio</title>
       </Head>
-      <header id="navbar">
-        <a href="#">
-          <span className="logo">&lt;Joey /&gt;</span>
-        </a>
-        <nav>
-          <div>
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="#experience">experience</a>
-            <a href="#contact">contact</a>
-            <a href="Joseph_Huntington_Resume_Public.pdf">
-              resume <u>↓</u>
-            </a>
-            <a href="/blog">blog →</a>
-          </div>
-          <div className="socials">
-            <a target="_blank" href="https://github.com/jwhunt19">
-              <FontAwesomeIcon className="fa-lg" icon={faGithub} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/josephhuntington/"
-            >
-              <FontAwesomeIcon className="fa-lg" icon={faLinkedin} />
-            </a>
-          </div>
-        </nav>
+      <Navbar />
 
-        <Button
-          id="menu-button"
-          className="mobile-menu-button"
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          onClick={handleMenu}
-        >
-          <FontAwesomeIcon className="fa-lg" icon={faBars} />
-        </Button>
-        <Menu
-          className="mobile-menu"
-          anchorEl={anchorEl}
-          getContentAnchorEl={null}
-          keepMounted
-          open={menu}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleMenuClose}>
-            <a href="#about">about</a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="#projects">projects</a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="#experience">experience</a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="#contact">contact</a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="Joseph_Huntington_Resume_Public.pdf">
-              resume <u>↓</u>
-            </a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="/blog">blog →</a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose} className="menu-close">
-            Close
-          </MenuItem>
-        </Menu>
-      </header>
 
       {/* Hero */}
       <div className="hero context">
