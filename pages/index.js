@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Head from "next/head";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,41 +6,22 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faBars } from "@fortawesome/free-solid-svg-icons";
-import { Modal, Button, Icon } from "@material-ui/core";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Button, Icon } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import projectsData from "../public/data/projects.json";
+import certificationData from "../public/data/certificates.json";
 import Navbar from "../src/components/Navbar.jsx";
 import Hero from "../src/components/Hero.jsx";
 import About from "../src/components/About.jsx";
 import ProjectList from "../src/components/ProjectList.jsx";
+import Experience from "../src/components/Experience.jsx";
 
 export default function Home() {
-  const [gohulaOpen, setGohulaOpen] = useState(false);
-  const [treehouseOpen, setTreehouseOpen] = useState(false);
-  const [galvanizeOpen, setGalvanizeOpen] = useState(false);
-  const [pokebuilderOpen, setPokebuilderOpen] = useState(false);
-  const [csvExporterOpen, setCSVExporterOpen] = useState(false);
+  const [openModalId, setOpenModalId] = useState(null);
 
-  const handleGohula = () => {
-    setGohulaOpen(!gohulaOpen);
-  };
-
-  const handleTreehouse = () => {
-    setTreehouseOpen(!treehouseOpen);
-  };
-
-  const handleGalvanize = () => {
-    setGalvanizeOpen(!galvanizeOpen);
-  };
-
-  const handlePokebuilder = () => {
-    setPokebuilderOpen(!pokebuilderOpen);
-  };
-
-  const handleCSVExporter = () => {
-    setCSVExporterOpen(!csvExporterOpen);
-  };
+  const openModal = (projectId) => setOpenModalId(projectId);
+  const closeModal = () => setOpenModalId(null);
 
   const useStyles = makeStyles((theme) => ({
     modal: {
@@ -72,68 +52,20 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <ProjectList projects={projectsData} classes={classes} />
-
-      {/* Experience */}
-      <div id="experience" className="experience">
-        <h3>Experience</h3>
-        <div className="experience-wrapper">
-          <div className="experience-card">
-            <div className="experience-image-wrapper">
-              <Image
-                onClick={handleTreehouse}
-                className="experience-cert"
-                src="/images/treehouse-cert.png"
-                layout="fill"
-                alt="galvanize and hack reactor certificate"
-                priority
-              />
-            </div>
-            <Modal
-              className={classes.modal}
-              open={treehouseOpen}
-              onClose={handleTreehouse}
-            >
-              <Image
-                className={(classes.paper, `modal`)}
-                alt="randomly generated"
-                src="/images/treehouse-cert.png"
-                height={720}
-                width={864}
-              />
-            </Modal>
-            <h4>Treehouse</h4>
-            <p>Front End Web Development Techdegree</p>
-          </div>
-          <div className="experience-card">
-            <div className="experience-image-wrapper">
-              <Image
-                onClick={handleGalvanize}
-                className="experience-cert"
-                src="/images/galvanize-cert.png"
-                layout="fill"
-                alt="galvanize and hack reactor certificate"
-                priority
-              />
-            </div>
-            <Modal
-              className={classes.modal}
-              open={galvanizeOpen}
-              onClose={handleGalvanize}
-            >
-              <Image
-                className={(classes.paper, `modal`)}
-                alt="randomly generated"
-                src="/images/galvanize-cert.png"
-                height={720}
-                width={864}
-              />
-            </Modal>
-            <h4>Hack Reactor | Galvanize</h4>
-            <p>Advanced Software Engineering Immersive</p>
-          </div>
-        </div>
-      </div>
+      <ProjectList
+        projects={projectsData}
+        classes={classes}
+        openModalId={openModalId}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
+      <Experience
+        certs={certificationData}
+        classes={classes}
+        openModalId={openModalId}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
 
       {/* Contact */}
       <div id="contact">

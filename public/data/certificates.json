@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Treehouse",
+    "description": "Front End Web Development Techdegree",
+    "image": {
+      "url": "/images/treehouse-cert.png",
+      "height": "720",
+      "width": "864"
+    }
+  },
+  {
+    "name": "Hack Reactor | Galvanize",
+    "description": "Advanced Software Engineering Immersive",
+    "image": {
+      "url": "/images/galvanize-cert.png",
+      "height": "720",
+      "width": "864"
+    }
+  }
+]
