@@ -12,12 +12,10 @@ import {
   Modal,
   Button,
   Icon,
-  Menu,
-  MenuItem,
-  MenuButton,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../src/components/Navbar.jsx";
+import Hero from "../src/components/Hero.jsx";
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
@@ -74,29 +72,8 @@ export default function Home() {
       </Head>
       <Navbar />
 
+      <Hero />  
 
-      {/* Hero */}
-      <div className="hero context">
-        <h1>
-          JOSEPH &#40;JOEY&#41; <br />
-          HUNTINGTON
-        </h1>
-        <h2>Full Stack Software Engineer</h2>
-      </div>
-      <div className="area">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
 
       {/* About */}
       <div id="about" className="about">
@@ -191,6 +168,8 @@ export default function Home() {
           </div>
         </div>
 
+
+
         <div className="projects-card">
           <div className="projects-card-text">
             <h4>Billions PG</h4>
@@ -226,6 +205,13 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* @media screen and (max-width: 768px)
+        .projects-card:nth-child(3) {
+            flex-direction: column-reverse;
+        } */}
+
+
 
         <div className="projects-card">
           <div className="project-image-wrapper">
