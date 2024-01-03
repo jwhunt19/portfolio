@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -8,15 +8,13 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faBars } from "@fortawesome/free-solid-svg-icons";
-import {
-  Modal,
-  Button,
-  Icon,
-} from "@material-ui/core";
+import { Modal, Button, Icon } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import projectsData from "../public/data/projects.json";
 import Navbar from "../src/components/Navbar.jsx";
 import Hero from "../src/components/Hero.jsx";
 import About from "../src/components/About.jsx";
+import ProjectList from "../src/components/ProjectList.jsx";
 
 export default function Home() {
   const [gohulaOpen, setGohulaOpen] = useState(false);
@@ -43,7 +41,7 @@ export default function Home() {
 
   const handleCSVExporter = () => {
     setCSVExporterOpen(!csvExporterOpen);
-  }
+  };
 
   const useStyles = makeStyles((theme) => ({
     modal: {
@@ -72,237 +70,9 @@ export default function Home() {
         <title>Joey Huntington Portfolio</title>
       </Head>
       <Navbar />
-      <Hero />  
+      <Hero />
       <About />
-
-      {/* Projects */}
-      <div id="projects" className="projects">
-        <h3>Projects</h3>
-        <div className="projects-card">
-          <div className="project-image-wrapper">
-            <Image
-              onClick={handleGohula}
-              className="projects-picture clickable"
-              src="/images/gohula.png"
-              alt="screenshot of etsy mock site"
-              layout="fill"
-              priority
-            />
-          </div>
-          <Modal
-            className={classes.modal}
-            open={gohulaOpen}
-            onClose={handleGohula}
-          >
-            <Image
-              className={(classes.paper, `modal`)}
-              alt="demo of etsy page mock site"
-              src="/images/gohula.gif"
-              height={700}
-              width={1200}
-            />
-          </Modal>
-          <div className="projects-card-text">
-            <h4>GoHuLa</h4>
-            <p>
-              <b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js,
-              Docker, Bootstrap
-            </p>
-            <br></br>
-            <p>
-              A full-stack mock-up of an etsy product page made to handle 100
-              randomly generated and seeded primary records stored in a database
-              across various mock sellers and interact with 2 additional
-              micro-services created by colleagues via a proxy server
-            </p>
-            <div className="projects-card-buttons">
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                onClick={handleGohula}
-              >
-                Demo
-              </Button>
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                target="_blank"
-                href="https://github.com/GoHuLa/Product"
-              >
-                See The Code
-              </Button>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div className="projects-card">
-          <div className="projects-card-text">
-            <h4>Billions PG</h4>
-            <p>
-              <b>Tech Stack:</b> PostgreSQL, Express, React, Node.js, Docker,
-              New Relic, K6, Loader.io, EC2, NGINX
-            </p>
-            <br></br>
-            <p>
-              Optimized and up-scaled a legacy codebase using PostgreSQL to
-              handle over 11 million unique records using balancing, indexing
-              and caching. Resulting in being able to handle over 2000 requests
-              per second with 0% error rate and average response of 40-50ms
-            </p>
-            <div className="projects-card-buttons">
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                target="_blank"
-                href="https://github.com/Billions-PG/Reviews"
-              >
-                See The Code
-              </Button>
-            </div>
-          </div>
-          <div className="project-image-wrapper">
-            <Image
-              className="projects-picture"
-              src="/images/reviews.png"
-              layout="fill"
-              alt="screenshot of etsy mock site"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* @media screen and (max-width: 768px)
-        .projects-card:nth-child(3) {
-            flex-direction: column-reverse;
-        } */}
-
-
-
-        <div className="projects-card">
-          <div className="project-image-wrapper">
-            <Image
-              onClick={handlePokebuilder}
-              className="projects-picture clickable"
-              src="/images/pokebuilder.png"
-              layout="fill"
-              alt="screenshot of pokebuilder"
-              priority
-            />
-          </div>
-          <Modal
-            className={classes.modal}
-            open={pokebuilderOpen}
-            onClose={handlePokebuilder}
-          >
-            <Image
-              className={(classes.paper, `modal`)}
-              alt="demo of pokemon team builder site"
-              src="/images/pokebuilder.gif"
-              height={600}
-              width={800}
-            />
-          </Modal>
-          <div className="projects-card-text">
-            <h4>PokeBuilder</h4>
-            <p>
-              <b>Tech Stack:</b> MongoDB, Mongoose, Express, React, Node.js,
-              Docker, Bootstrap
-            </p>
-            <br></br>
-            <p>
-              A full-stack web app used to build teams of pokemon and see at a
-              glance how well they match up to different elemental types and
-              damage types
-            </p>
-            <div className="projects-card-buttons">
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                onClick={handlePokebuilder}
-              >
-                Demo
-              </Button>
-              {/* TODO: Need to host pokebuilder somewhere else */}
-              {/* <Button 
-              className="projects-card-button" 
-              variant="outlined"
-              target="_blank"
-              href="https://pokebuilder.herokuapp.com/"
-            >
-              Try it out
-            </Button> */}
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                target="_blank"
-                href="https://github.com/jwhunt19/pokebuilder"
-              >
-                See The Code
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="projects-card">
-          <div className="projects-card-text">
-            <h4>Spotify CSV Exporter</h4>
-            <p>
-              <b>Tech Stack:</b> React, Axios, Spotify Web API, Vite, Local
-              Storage, GitHub Pages, GitHub Actions, OAuth 2.0 with PKCE.
-            </p>
-            <br></br>
-            <p>
-              Engineered a cutting-edge, single-page React application
-              leveraging OAuth 2.0 with PKCE for secure Spotify API integration,
-              enabling users to seamlessly export their Spotify playlists to
-              CSV. Implemented efficient, asynchronous data handling with Axios,
-              and employed Vite for an optimized build process, resulting in a
-              highly responsive and intuitive user experience.
-            </p>
-            <div className="projects-card-buttons">
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                target="_blank"
-                href="https://github.com/jwhunt19/spotify-csv-exporter"
-              >
-                See The Code
-              </Button>
-              <Button
-                className="projects-card-button"
-                variant="outlined"
-                onClick={handleCSVExporter}
-              >
-                Demo
-              </Button>
-            </div>
-          </div>
-          <div className="project-image-wrapper">
-            <Image
-              onClick={handleCSVExporter}
-              className="projects-picture clickable"
-              src="/images/spotify-csv-exporter.png"
-              layout="fill"
-              alt="screenshot of spotify csv exporter"
-              priority
-            />
-          </div>
-          <Modal
-            className={classes.modal}
-            open={csvExporterOpen}
-            onClose={handleCSVExporter}
-          >
-            <Image
-              className={(classes.paper, `modal`)}
-              alt="demo of spotify csv exporter"
-              src="/images/spotify-csv-exporter.gif"
-              height={600}
-              width={800}
-            />
-          </Modal>
-        </div>
-      </div>
+      <ProjectList projects={projectsData} classes={classes} />
 
       {/* Experience */}
       <div id="experience" className="experience">

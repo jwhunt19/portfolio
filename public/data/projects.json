@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Gohula",
+    "technologies": "MongoDB, Mongoose, Express, React, Node.js, Docker, Bootstrap",
+    "description": "A full-stack mock-up of an etsy product page made to handle 100 randomly generated and seeded primary records stored in a database across various mock sellers and interact with 2 additional micro-services created by colleagues via a proxy server",
+    "imageUrl": "/images/gohula.png",
+    "links": {
+      "github": "https://github.com/GoHuLa/Product",
+      "demo": {
+        "url": "/images/gohula.gif",
+        "height": "700",
+        "width": "1200"
+      },
+      "deployed": ""
+    }
+  },
+  {
+    "name": "Billions PG",
+    "technologies": "PostgreSQL, Express, React, Node.js, Docker, New Relic, K6, Loader.io, EC2, NGINX",
+    "description": "Optimized and up-scaled a legacy codebase using PostgreSQL to handle over 11 million unique records using balancing, indexing and caching. Resulting in being able to handle over 2000 requests per second with 0% error rate and average response of 40-50ms",
+    "imageUrl": "/images/reviews.png",
+    "links": {
+      "github": "https://github.com/Billions-PG/Reviews",
+      "demo": {
+        "url": "",
+        "height": "",
+        "width": ""
+      },
+      "deployed": ""
+    }
+  },
+  {
+    "name": "PokeBuilder",
+    "technologies": "MongoDB, Mongoose, Express, React, Node.js, Docker, Bootstrap",
+    "description": "A full-stack web app used to build teams of pokemon and see at a glance how well they match up to different elemental types and damage types",
+    "imageUrl": "/images/pokebuilder.png",
+    "links": {
+      "github": "https://github.com/jwhunt19/pokebuilder",
+      "demo": {
+        "url": "/images/pokebuilder.gif",
+        "height": "600",
+        "width": "800"
+      },
+      "deployed": ""
+    }
+  },
+  {
+    "name": "Spotify CSV Exporter",
+    "technologies": "React, Axios, Spotify Web API, Vite, Local Storage, GitHub Pages, GitHub Actions, OAuth 2.0 with PKCE",
+    "description": "Engineered a cutting-edge, single-page React application leveraging OAuth 2.0 with PKCE for secure Spotify API integration, enabling users to seamlessly export their Spotify playlists to CSV. Implemented efficient, asynchronous data handling with Axios, and employed Vite for an optimized build process, resulting in a highly responsive and intuitive user experience",
+    "imageUrl": "/images/spotify-csv-exporter.png",
+    "links": {
+      "github": "https://github.com/jwhunt19/spotify-csv-exporter",
+      "demo": {
+        "url": "/images/spotify-csv-exporter.gif",
+        "height": "600",
+        "width": "800"
+      },
+      "deployed": ""
+    }
+  }
+]
