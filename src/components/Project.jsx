@@ -41,7 +41,7 @@ const Project = ({ project, openModalId, openModal, closeModal, classes }) => {
         <br></br>
         <p>{project.description}</p>
         <div className="projects-card-buttons">
-          {!!project.links.demo.url && (
+          {project.links.demo.url && (
             <Button
               className="projects-card-button"
               variant="outlined"
@@ -50,7 +50,7 @@ const Project = ({ project, openModalId, openModal, closeModal, classes }) => {
               Demo
             </Button>
           )}
-          {!!project.links.github && (
+          {project.links.github && (
             <Button
               className="projects-card-button"
               variant="outlined"
@@ -58,6 +58,16 @@ const Project = ({ project, openModalId, openModal, closeModal, classes }) => {
               href={project.links.github}
             >
               See The Code
+            </Button>
+          )}
+          {project.links.deployed && (
+            <Button
+              className="projects-card-button"
+              variant="outlined"
+              target="_blank"
+              href={project.links.deployed}
+            >
+              Try it out
             </Button>
           )}
         </div>
