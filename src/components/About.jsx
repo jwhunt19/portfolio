@@ -15,8 +15,8 @@ const About = () => {
           />
         </div>
         <p>
-          Hello! My name is Joseph but you can call me Joey. I am a full stack
-          software engineer based in Northern Virginia always looking for the
+          Hello! My name is Joseph but you can call me Joey. I am a Boulder 
+          Colorado based full stack software engineer always looking for the
           next great opportunity. With a background as an Apprentice Electrician
           and Office Administrator I've been involved in problem solving across
           a wide spectrum, and I love it. My dream has always been to work with
