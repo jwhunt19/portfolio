@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Layout from "../../src/components/layout.js";
+import Layout from "./_blogLayout.js";
 import styles from "./blog.module.css";
 
 export default function Projects() {
