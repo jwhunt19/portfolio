@@ -341,6 +341,10 @@ h2 {
   align-items: center;
 }
 
+.projects-card:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
 .projects-card:not(:last-child) {
   margin-bottom: 6.25rem;
 }
@@ -508,11 +512,7 @@ h2 {
   }
 
   .projects-card {
-    flex-direction: column;
-  }
-
-  .projects-card:nth-child(3) {
-    flex-direction: column-reverse;
+    flex-direction: column !important;
   }
 
   .projects-card-text h4 {

@@ -1,4 +1,4 @@
-import Layout from '../../components/layout.js'
+import Layout from './_blogLayout.js'
 import { getPostIDs, getPostData } from '../../lib/posts.js'
 import styles from './blog.module.css';
 
